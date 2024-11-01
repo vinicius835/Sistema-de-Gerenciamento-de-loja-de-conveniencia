@@ -9,6 +9,7 @@ Neste projeto gerenciaremos os produtos de lojas online, como preço, promoção
 ## Contato
 
 Desenvolvido por Bruno Davi, Paulo Ricardo, Vinicius Angelo.  
+
 **Email:** <br/>
        
        bruno_dutka@estudante.sesisenai.org.br
