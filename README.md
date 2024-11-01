@@ -1,6 +1,6 @@
 # Sistema-de-Gerenciamento-de-loja-online
 
-# **Nome do Projeto**
+# **Sistema de Gerenciamento de loja online**
 
 > Exemplo de Projeto: Sistema de Gerenciamento de Tarefas
 
@@ -26,7 +26,7 @@ Este é um sistema de gerenciamento de tarefas para equipes, onde usuários pode
 ---
 
 ## Instalação
-
+Mit Liscense
 ### Pré-requisitos
 
 - Node.js (versão 14 ou superior)
