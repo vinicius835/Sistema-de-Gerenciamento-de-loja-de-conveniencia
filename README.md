@@ -1,4 +1,3 @@
-# Sistema-de-Gerenciamento-de-loja-online
 
 # **Sistema de Gerenciamento de loja online**
 
