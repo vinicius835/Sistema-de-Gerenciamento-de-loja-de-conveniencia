@@ -21,7 +21,7 @@
 
 ## Descrição do Projeto
 
-Este é um sistema de gerenciamento de tarefas para equipes, onde usuários podem criar, editar e excluir tarefas, além de definir prioridades e prazos. O objetivo é melhorar a organização e a produtividade, facilitando o acompanhamento de tarefas em equipe.
+Neste projeto gerenciaremos os produtos de lojas online, como preço, promoção, inventario da loja, pedidos, dados dos clientes
 
 ---
 
