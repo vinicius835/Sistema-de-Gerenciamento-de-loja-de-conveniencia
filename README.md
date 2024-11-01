@@ -12,4 +12,3 @@ Desenvolvido por Paulo Ricardo, Bruno Davi, Vinicius Angelo.
 Email: vinicius_alves9@estudante.sesisenai.org.br
        paulo_r_joao@estudante.sesisenai.org.br
        bruno_dutka@estudante.sesisenai.org.br
-LinkedIn: [seu-linkedin](https://www.linkedin.com/in/seu-perfil/)
