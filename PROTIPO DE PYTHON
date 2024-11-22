@@ -1,3 +1,4 @@
+# VERSÃO 0.0.0
 #FAVOR BAIXAR IMAGEM TESTE.PY
 import tkinter  as Tk
 from PIL import Image,ImageTk
@@ -26,4 +27,198 @@ mensagem2 = Tk.Label (text="El impostor",fg="red",bg = "#009900")
 mensagem2.grid(row=2, column=1)
 custo2 =Tk.Label (text="R$ 1,00")
 custo2.grid(row=3,column=1)
+janela.mainloop()
+
+#
+#
+# Versão 0.1.0
+#
+#
+import tkinter  as Tk
+from PIL import Image,ImageTk
+
+# public function cadastraconta(kgasto,dtleitura)
+janela = Tk.Tk()
+janela.state('zoomed')
+janela.title("Teste Principal")
+
+janela.grid_columnconfigure(1,minsize=2)
+janela.grid_rowconfigure(0,minsize=100)
+titulo = Tk.Label(text="TESTE TITULO",fg="white",bg="#000000",width=230,height=5)
+titulo.grid(row=0,column=0,columnspan=4)
+def comida():
+    comidas = Tk.Toplevel()
+    comidas.state('zoomed')
+    comidas.title("Comida")
+    titulo = Tk.Label (comidas,text="TESTE COMIDA",fg="black",bg="#FFFF00",width=230,height=5).grid(row=0,column=0,columnspan=4)
+    tkimagemc0 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(comidas,image=tkimagemc0).grid(row=1,column=0)
+    #
+    tkimagemc1 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(comidas,image=tkimagemc1).grid(row=1,column=1)
+    #
+    tkimagemc2 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(comidas,image=tkimagemc2).grid(row=1,column=2)
+    #
+    tkimagemc3 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(comidas,image=tkimagemc3).grid(row=1,column=3)
+    #
+    tkimagemc4 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(comidas,image=tkimagemc4).grid(row=5,column=0)
+    #
+    tkimagemc5 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(comidas,image=tkimagemc5).grid(row=5,column=1)
+    #
+    tkimagemc6 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(comidas,image=tkimagemc6).grid(row=5,column=2)
+    #
+    tkimagemc7 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(comidas,image=tkimagemc7).grid(row=5,column=3)
+    botao_fechar =Tk.Button(comidas,text="Voltar",command=comidas.destroy).grid(row=7,column=0,columnspan=4,sticky='NSEW')
+    comidas.mainloop()
+seila = []
+print(seila)
+def objeto():
+    obj = Tk.Toplevel()
+    obj.state('zoomed')
+    obj.title("Comida")
+    titulo = Tk.Label (obj,text="TESTE OBJETO",fg="white",bg="#990000",width=230,height=5).grid(row=0,column=0,columnspan=4)
+    tkimagemob0 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(obj,image=tkimagemob0).grid(row=1,column=0)
+    nomeob0 =Tk.Label(obj,text="Bolinha Pula-Pula(1 unidade)")
+    nomeob0.grid(row=2,column=0)
+    seila.append(nomeob0)
+    precoob0 = Tk.Label(obj,text="R$ 2,00")
+    precoob0.grid(row=3,column=0)
+    compraob0 =Tk.Button(obj,text="Comprar")
+    compraob0.grid(row=4,column=0)
+    #
+    tkimagemob1 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(obj,image=tkimagemob1).grid(row=1,column=1)
+    #
+    tkimagemob2 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(obj,image=tkimagemob2).grid(row=1,column=2)
+    #
+    tkimagemob3 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(obj,image=tkimagemob3).grid(row=1,column=3)
+    #
+    tkimagemob4 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(obj,image=tkimagemob4).grid(row=5,column=0)
+    #
+    tkimagemob5 = ImageTk.PhotoImage(Image.open("teste image.jpg))
+    Tk.Label(obj,image=tkimagemob5).grid(row=5,column=1)
+    #
+    tkimagemob6 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(obj,image=tkimagemob6).grid(row=5,column=2)
+    #
+    tkimagemob7= ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(obj,image=tkimagemob7).grid(row=5,column=3)
+    botao_fechar =Tk.Button(obj,text="Voltar",command=obj.destroy,height=2).grid(row=7,column=0,columnspan=4,sticky="NSEW")
+    obj.mainloop()
+def bebida():
+    bb = Tk.Toplevel()
+    bb.state('zoomed')
+    bb.title("Comida")
+    titulo = Tk.Label (bb,text="TESTE BEBIDAS",fg="white",bg="#448811",width=230,height=5).grid(row=0,column=0)
+    tkimagem = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(bb,image=tkimagem).grid(row=1,column=0)
+    botao_fechar =Tk.Button(bb,text="Voltar",command=bb.destroy).grid(row=2,column=0)
+    bb.mainloop()
+def limpeza():
+    limpz = Tk.Toplevel()
+    limpz.state('zoomed')
+    limpz.title("Comida")
+    titulo = Tk.Label (limpz,text="TESTE LIMPEZA",fg="white",bg="#000099",width=230,height=5).grid(row=0,column=0)
+    tkimagem = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+    Tk.Label(limpz,image=tkimagem).grid(row=1,column=0)
+    botao_fechar =Tk.Button(limpz,text="Voltar",command=limpz.destroy).grid(row=2,column=0)
+    limpz.mainloop()
+
+
+tkimagem = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+Tk.Label(janela,image=tkimagem,).grid(row=2,column=0)
+nome_produto = Tk.Label(janela,text="Boneca Angelica").grid(row=3,column=0)
+prec_produto = Tk.Label(janela,text='R$ 100.00').grid(row=4,column=0)
+comprar_produto = Tk.Button(text="Levar a carrinho").grid(row=5,column=0)
+tkimagem2 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+Tk.Label(janela,image=tkimagem2).grid(row=2,column=1)
+tkimagem3 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+Tk.Label(janela,image=tkimagem3).grid(row=2,column=2)
+tkimagem4 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+Tk.Label(janela,image=tkimagem4).grid(row=2,column=3)
+tkimagemp = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+Tk.Label(janela,image=tkimagemp).grid(row=6,column=0)
+tkimagemp1 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+Tk.Label(janela,image=tkimagemp1).grid(row=6,column=1)
+tkimagemp2 = ImageTk.PhotoImage(Image.open("teste image.jpg"))
+Tk.Label(janela,image=tkimagemp2).grid(row=6,column=2)
+tkimagemp3= ImageTk.PhotoImage(Image.open("teste image.jpg"))
+Tk.Label(janela,image=tkimagemp3).grid(row=6,column=3)
+def login():
+    log = Tk.Toplevel()
+    log.title('Login')
+
+    # log.state("zoomed")
+
+    log.rowconfigure(0,weight=1)
+    log.columnconfigure(0,weight=1)
+    log.resizable(False,False)
+
+    #Cores Fundo
+    # Row 00
+    Cor_01 = Tk.Label(log,text='LOGIN',fg='Black', bg='#C0C0C0',width=40,height=3,font=10)
+    Cor_01.grid(row=0,column=1,sticky='NSEW',columnspan=4)
+    # Row 06
+    Cor_02 = Tk.Label(log,fg='Black', bg='#C0C0C0',width=40,height=1)
+    Cor_02.grid(row=8,column=1,sticky='NSEW',columnspan=4)
+
+    #Espaço em Branco
+    # Row 01
+    CorB_01 = Tk.Label(log)
+    CorB_01.grid(row=1,column=1)
+    # Row 02
+    CorB_02 = Tk.Label(log)
+    CorB_02.grid(row=3,column=1)
+
+    # Row 05
+    CorB_02 = Tk.Label(log)
+    CorB_02.grid(row=5,column=1)
+
+    # Row 07
+    CorB_03 = Tk.Label(log)
+    CorB_03.grid(row=7,column=1)
+
+    #Entrada Usuário
+    TextoUsuario = Tk.Label(log,text='Usuário:')
+    TextoUsuario.grid(row=2,column=1)
+
+    Usuario = Tk.Text(log,width=35,height=1)
+    Usuario.grid(row=2,column=2)
+
+    #Entrada Senha
+    TextoSenha = Tk.Label(log,text='Senha:')
+    TextoSenha.grid(row=4,column=1)
+
+    Senha = Tk.Text(log,width=35,height=1)
+    Senha.grid(row=4,column=2)
+
+    #Botão Confirmação
+    BotaoLogin = Tk.Button(log,text='Confirmar Login')
+    BotaoLogin.grid(row=6,columnspan=3)
+
+    # Informações Login (Usuário e Senha)
+    def InfoLogin():
+        print()
+
+    log.mainloop()
+
+def carrinho():
+    arroz = 1
+botao_comida =Tk.Button(janela,text="COMIDA",width=10,height=2,border=3,command=comida).grid(row=1,column=0)
+botao_obj =Tk.Button(janela,text="objeto",width=10,height=2,border=3,command=objeto).grid(row=1,column=1)
+botao_bb =Tk.Button(janela,text="bebida",width=10,height=2,border=3,command=bebida).grid(row=1,column=2)
+botao_limpz =Tk.Button(janela,text="limpeza",width=10,height=2,border=3,command=limpeza).grid(row=1,column=3)
+botao_login =Tk.Button(janela,text="LOGIN",width=10,height=2,border=3,command=login).grid(row=0,column=3)
+botao_carro =Tk.Button(janela,text="CARRINHOS 2",width=15,height=2,border=3,command=carrinho)
+botao_carro.grid(row=0,column=2)
 janela.mainloop()
