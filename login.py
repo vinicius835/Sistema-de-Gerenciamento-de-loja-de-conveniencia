@@ -125,7 +125,7 @@ janela.mainloop()
 #
 #   Use "lojanome";
 #
-#   CREATE TABLE "Nome" (
+#   CREATE TABLE usuario (
 #   id INT AUTO_INCREMENT PRIMARY KEY,
 #   Nome VARCHAR(100) NOT NULL,
 #   Email VARCHAR(100) NOT NULL,
