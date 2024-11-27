@@ -1,121 +1,132 @@
+# Prototipo - 02
+# -> Tela de Login sem função
+# -> Somente Tela Cadastro
+#
 import tkinter as tk
+from tkinter import messagebox
+import mysql.connector
 
-#Janela CRIAR CONTA
-def Janela_CriarConta():
+#   Banco de Dados
+conexao = mysql.connector.connect(
+    host='localhost', 
+    user='root',        
+    password='',        
+    database='lojanome'
+)
 
+#   Criação e Validação Cliente
+def CriarConta_Info():
+    nome = Usuario2.get()
+    email = Email.get()
+    senha1 = Senha1.get()
+    senha2 = Senha2.get()
+
+    if not nome or not email or not senha1 or not senha2:
+        messagebox.showerror("ERRO","Todos os campos devem ser preenchidos!")
+        return
+    
+    if senha1 != senha2:
+        messagebox.showerror("ERRO","As senhas não coincidem")
+    
+    try:
+        cursor = conexao.cursor()
+        sql = "INSERT INTO usuario (Nome, Email, Senha) VALUES (%s, %s, %s)"
+        valores = (nome, email, senha1)
+        cursor.execute(sql, valores)
+        conexao.commit()
+        messagebox.showinfo("Sucesso", "Conta criada com sucesso!",)
+        cursor.close()
+
+    finally:
+        if 'cursor' in locals():
+            cursor.close()
+
+#   Janela 02 - Criar Conta 
+def CriarConta_Janela():
+    global janela2
     janela2 = tk.Toplevel()
-    janela2.title('Criar Conta')
+    janela2. title("Criar Conta")
+    janela2.resizable(False, False)
 
-    janela2.resizable(False,False)
+    TextoConta = tk.Label(janela2, text="Criar Conta", font=("Arial", 16), bg="#C0C0C0", height=2)
+    TextoConta.grid(row=0,columnspan=2,sticky="NSEW")
 
-    janela.rowconfigure(0,weight=1)
-    janela.columnconfigure(0,weight=1)
+#   Entrada Usuário
+    global Usuario2
+    Usuario2 = tk.Entry(janela2,width=30)
+    Usuario2.grid(row=1,column=1,sticky="E")
+    TextoUser2 = tk.Label(janela2, text="Nome:")
+    TextoUser2.grid(row=1,column=0,sticky="E")
 
-    Cor_01 = tk.Label(janela2,text='Criar Conta',fg='Black', bg='#C0C0C0',width=40,height=3,font=10)
-    Cor_01.grid(row=0,column=0,sticky='NSEW',columnspan=5)
+#   Entrada Email
+    global Email
+    Email = tk.Entry(janela2,width=30)
+    Email.grid(row=2, column=1)
+    TextoEmail = tk.Label(janela2,text="Email:")
+    TextoEmail.grid(row=2,column=0,sticky="E")
 
-    Cor_02 = tk.Label(janela2,fg='Black', bg='#C0C0C0',width=40,height=1)
-    Cor_02.grid(row=14,column=0,sticky='NSEW',columnspan=5)
-
-    #Espaços em Branco
-    CorB_01 = tk.Label(janela2)
-    CorB_01.grid(row=1,column=1)
-
-    CorB_02 = tk.Label(janela2)
-    CorB_02.grid(row=3,column=1)
-
-    CorB_03 = tk.Label(janela2)
-    CorB_03.grid(row=5,column=1)
-
-    CorB_04 = tk.Label(janela2)
-    CorB_04.grid(row=7,column=1)
+#   Entrada Senhas
+#   Senha 01
+    global Senha1
+    Senha1 = tk.Entry(janela2,width=30)
+    Senha1.grid(row=3,column=1)
+    TextoSe1 = tk.Label(janela2, text="Senha:")
+    TextoSe1.grid(row=3, column=0, sticky="E")
+#   Senha 02 Confirmação
+    global Senha2
+    Senha2 = tk.Entry(janela2, show="*", width=30)
+    Senha2.grid(row=4, column=1, sticky="E")
+    TextoSe2 = tk.Label(janela2, text="Confirmar Senha:")
+    TextoSe2.grid(row=4, column=0)
     
-    CorB_05 = tk.Label(janela2)
-    CorB_05.grid(row=4,column=1)
+#   Botão 02 - Confirmar Criação Conta
+    Botao2 = tk.Button(janela2, text="Confirmar", command=CriarConta_Info)
+    Botao2.grid(row=5, columnspan=2, pady=10)
 
-    CorB_06 = tk.Label(janela2)
-    CorB_06.grid(row=12,column=1)
-
-    #Entrada Usuário
-    TextoNome = tk.Label(janela2,text='Nome:')
-    TextoNome.grid(row=2,column=1)
-
-    Usuario = tk.Text(janela2,width=35,height=1)
-    Usuario.grid(row=2,column=2)
-    
-    TextoEmail = tk.Label(janela2,text='Email:')
-    TextoEmail.grid(row=4,column=1)
-
-    Email = tk.Text(janela2,width=35,height=1)
-    Email.grid(row=4,column=2)
-
-    #Entrada Senha
-    TextoSenha = tk.Label(janela2,text='Senha:')
-    TextoSenha.grid(row=6,column=1)
-
-    Senha1 = tk.Text(janela2,width=35,height=1)
-    Senha1.grid(row=6,column=2)
-
-    #Confirmar Senha
-    ConfirmarSenha = tk.Label(janela2,text='Confirmar Senha:')
-    ConfirmarSenha.grid(row=11,column=1)
-
-    Senha2 = tk.Text(janela2,width=35,height=1)
-    Senha2.grid(row=11,column=2)
-
-    #Botão
-    ConfirmarConta = tk.Button(janela2,text='Confirmar',command=janela2.destroy)
-    ConfirmarConta.grid(row=13,columnspan=4)
-
-
-#Janela LOGIN
+#   Janela 01 - Login
 janela = tk.Tk()
-janela.title('Login')
+janela.title("Login")
+janela.resizable(False, False)
 
-janela.resizable(False,False)
+#   Texto Login
+TextoLogin = tk.Label(janela,text="LOGIN", font=("Arial", 16), bg="#C0C0C0", height=2)
+TextoLogin.grid(row=0, columnspan=2, sticky="NSEW")
 
-janela.rowconfigure(0,weight=1)
-janela.columnconfigure(0,weight=1)
+#   Entrada Usuario (Email)
+global Usuario1
+Usuario1 = tk.Entry(janela,width=30)
+Usuario1.grid(row=1, column=1)
+TextoUser1 = tk.Label(janela, text="Usuário (Email:)")
+TextoUser1.grid(row=1, column=0, sticky="E")
 
-#Cores Fundo
-Cor_01 = tk.Label(text='LOGIN',fg='Black', bg='#C0C0C0',width=40,height=3,font=10)
-Cor_01.grid(row=0,column=1,sticky='NSEW',columnspan=4)
+#   Entrada Senha
+global Senha3
+Senha3 =tk.Entry(janela, show="*", width=30)
+Senha3.grid(row=2, column=1)
+TextoSe3 = tk.Label(janela,text="Senha:")
+TextoSe3.grid(row=2, column=0, sticky="E")
 
-Cor_02 = tk.Label(fg='Black', bg='#C0C0C0',width=40,height=1)
-Cor_02.grid(row=10,column=1,sticky='NSEW',columnspan=4)
+#   Botão 01 - Confirmar Login
+Botao1 = tk.Button(janela, text="Confirmar Login")
+Botao1.grid(row=3, columnspan=2, pady=10)
 
-#Espaços em Branco
-CorB_01 = tk.Label()
-CorB_01.grid(row=1,column=1)
+#   Botão 03 - Janela Criar Conta
+Botao3 = tk.Button(janela,text="Criar Conta", command=CriarConta_Janela)
+Botao3.grid(row=4,columnspan=2)
 
-CorB_02 = tk.Label()
-CorB_02.grid(row=3,column=1)
-
-CorB_03 = tk.Label()
-CorB_03.grid(row=5,column=1)
-
-CorB_04 = tk.Label()
-CorB_04.grid(row=7,column=1)
-
-#Entrada Usuário
-TextoUsuario = tk.Label(text='Usuário:(Email)')
-TextoUsuario.grid(row=2,column=1)
-
-Usuario = tk.Text(width=35,height=1)
-Usuario.grid(row=2,column=2)
-
-#Entrada Senha
-TextoSenha = tk.Label(text='Senha:')
-TextoSenha.grid(row=4,column=1)
-
-Senha = tk.Text(width=35,height=1)
-Senha.grid(row=4,column=2)
-
-#Botão
-BotaoLogin = tk.Button(text='Confirmar Login')
-BotaoLogin.grid(row=6,columnspan=4)
-
-botao = tk.Button(janela, text='Criar Conta', command= Janela_CriarConta)
-botao.grid(row=9,columnspan=4)
+#   Cor - Janela
+Cor = tk.Label(janela,bg="#C0C0C0", height=1)
+Cor.grid(row=5,columnspan=2,sticky="NSEW")
 
 janela.mainloop()
+#- - - - -Codigos WorkBench SQL- - - - -
+# 
+#   CREATE lojanome;
+#
+#   Use "lojanome";
+#
+#   CREATE TABLE "Nome" (
+#   id INT AUTO_INCREMENT PRIMARY KEY
+#   Nome VARCHAR(100) NOT NULL
+#   Email VARCHAR(100) NOT NULL
+#);
