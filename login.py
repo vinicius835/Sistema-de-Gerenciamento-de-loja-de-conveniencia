@@ -1,7 +1,3 @@
-# Prototipo - 02
-# -> Tela de Login sem função
-# -> Somente Tela Cadastro
-#
 import tkinter as tk
 from tkinter import messagebox
 import mysql.connector
@@ -119,14 +115,17 @@ Cor = tk.Label(janela,bg="#C0C0C0", height=1)
 Cor.grid(row=5,columnspan=2,sticky="NSEW")
 
 janela.mainloop()
+
 #- - - - -Codigos WorkBench SQL- - - - -
 # 
 #   CREATE lojanome;
 #
 #   Use "lojanome";
 #
-#   CREATE TABLE "usuario" (
-#   id INT AUTO_INCREMENT PRIMARY KEY
-#   Nome VARCHAR(100) NOT NULL
-#   Email VARCHAR(100) NOT NULL
+#   CREATE TABLE "Nome" (
+#   id INT AUTO_INCREMENT PRIMARY KEY,
+#   Nome VARCHAR(100) NOT NULL,
+#   Email VARCHAR(100) NOT NULL,
+#   Senha VARCHAR(6) NOT NULL,
 #);
+#
