@@ -58,7 +58,6 @@ def Validar_Login():
 
 #   Janela 02 - Criar Conta 
 def CriarConta_Janela():
-    global janela2
     janela2 = tk.Toplevel()
     janela2. title("Criar Conta")
     janela2.resizable(False, False)
