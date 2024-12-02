@@ -438,8 +438,7 @@ def finalize_purchase(car):
     payment_options = ["Crédito", "Débito", "Pix"]
     
     # Combobox para selecionar a forma de pagamento
-    payment_combobox = ttk.Combobox(payment_window, values=payment_options, state="readonly")
-    payment_combobox.set("Selecione a forma de pagamento")  # Texto padrão
+    payment_combobox = ttk.Combobox(payment_window, values=payment_options, state="readonly")  # Texto padrão
     payment_combobox.pack(pady=20)
 
     # Função para exibir a mensagem de confirmação após a seleção
@@ -450,7 +449,8 @@ def finalize_purchase(car):
             arm.clear()  # Limpar o carrinho após a compra
             car.destroy()  # Fechar a janela do carrinho
             payment_window.destroy()  # Fechar a janela de pagamento
-            update_cart_display()  # Atualizar a interface principal (carrinho vazio)
+
+
         else:
             messagebox.showerror("Erro", "Escolha uma forma de pagamento válida.")
     
