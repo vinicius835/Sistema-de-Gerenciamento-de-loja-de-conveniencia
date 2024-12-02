@@ -371,7 +371,7 @@ def limpeza():
     precol6.grid(row=7,column=1)
 
     #
-    tkimagemli6 = ImageTk.PhotoImage(Image.open("imagem/suco.jpg"))
+    tkimagemli6 = ImageTk.PhotoImage(Image.open("imagem/vass.jpg"))
     Tk.Label(limpz,image=tkimagemli6).grid(row=5,column=2)
     nomeli7 = Tk.Label(limpz,text="Vassoura")
     nomeli7.grid(row=6,column=2)
@@ -379,7 +379,7 @@ def limpeza():
     precol7.grid(row=7,column=2)
 
     #
-    tkimagemli7 = ImageTk.PhotoImage(Image.open("imagem/pizza.jpg"))
+    tkimagemli7 = ImageTk.PhotoImage(Image.open("imagem/escova.jpg"))
     Tk.Label(limpz,image=tkimagemli7).grid(row=5,column=3)
     nomeli8 = Tk.Label(limpz,text="Escova")
     nomeli8.grid(row=6,column=3)
