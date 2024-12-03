@@ -418,7 +418,6 @@ def adicionar(nome,preco,id):
         arm[nome]['quantity']+=1
     else:
         arm[nome] = {'price': preco, 'quantity':1}
-    messagebox.showinfo("TRABALHO",f"Você adicicionou o produto {nome} com o valor de {preco}")
     # try:
     #     cursor = conexao.cursor()
     #     sql = "SELECT * FROM produtoteste WHERE id = %s AND"
