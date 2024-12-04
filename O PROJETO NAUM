@@ -418,16 +418,6 @@ def adicionar(nome,preco,id):
         arm[nome]['quantity']+=1
     else:
         arm[nome] = {'price': preco, 'quantity':1}
-    # try:
-    #     cursor = conexao.cursor()
-    #     sql = "SELECT * FROM produtoteste WHERE id = %s AND"
-    #     valores = (id)
-    #     cursor.execute(sql.valores)
-    #     resultado = cursor.fetchone()
-    #     print(sql)
-    # finally:
-    #     if 'cursor' in locals():
-    #         cursor.close()
 def finalize_purchase(car):
     # Criação da janela para escolher a forma de pagamento
     payment_window = Tk.Toplevel()
@@ -529,7 +519,6 @@ prec_produto8 = Tk.Label(janela,text='R$ 16.00').grid(row=8,column=3)
 
 #
 def login():
-    # Prototipo - 03
     import tkinter as tk
     from tkinter import messagebox
 
