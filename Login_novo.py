@@ -39,7 +39,7 @@ def login():
             usuario_logado = True
             messagebox.showinfo("Sucesso", "Login realizado com sucesso!")
             # Habilitar o botão  -> Confirmar comprar
-            BotaoConfirmarCompra.config(state="normal")  # Habilitar o botão
+            BotaoConfirmarCompra.config(state="normal")
         else:
             usuario_logado = False
             messagebox.showerror("Erro", "Usuário ou senha incorretos!")
