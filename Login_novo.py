@@ -38,6 +38,7 @@ def login():
         if email_1 in usuarios and usuarios[email_1]["senha"] == senha_1:
             usuario_logado = True
             messagebox.showinfo("Sucesso", "Login realizado com sucesso!")
+            # Habilitar o botão  -> Confirmar comprar
             BotaoConfirmarCompra.config(state="normal")  # Habilitar o botão
         else:
             usuario_logado = False
