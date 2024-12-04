@@ -1,3 +1,6 @@
+# - - - Prototipo 04 - - - 
+# -> Sem banco de dados (sql)
+# -> Para teste
 def login():
     import tkinter as tk
     from tkinter import messagebox
