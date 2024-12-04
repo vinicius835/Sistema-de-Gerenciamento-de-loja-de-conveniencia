@@ -532,15 +532,6 @@ def login():
     # Prototipo - 03
     import tkinter as tk
     from tkinter import messagebox
-    import mysql.connector
-
-    #   Banco de Dados
-    conexao = mysql.connector.connect(
-        host='localhost', 
-        user='root',        
-        password='',        
-        database='loja_teste'
-    )
 
     #   Criação e Validação Cliente
     def CriarConta_Info():
@@ -554,7 +545,6 @@ def login():
             return
         if senha01_2 != senha02_2:
             messagebox.showerror("ERRO","As senhas não coincidem")
-        try:
             cursor = conexao.cursor()
             sql = "INSERT INTO usuario (Nome, Email, Senha) VALUES (%s, %s, %s)"
             valores = (nome_2, email_2, senha01_2)
@@ -562,16 +552,12 @@ def login():
             conexao.commit()
             messagebox.showinfo("Sucesso", "Conta criada com sucesso!")
             cursor.close() 
-        finally:
-            if 'cursor' in locals():
-                cursor.close()
 
     #   Validar Login
     def Validar_Login():
         email_1 = Usuario1.get()
         senha_1 = Senha3.get()
 
-        try:
             # Buscar dados e validar -> (email e senha)
             cursor = conexao.cursor()
             sql = "SELECT * FROM usuario WHERE Email = %s AND Senha = %s"
@@ -583,9 +569,6 @@ def login():
                 messagebox.showinfo("Sucesso", "Login realizado com sucesso!")
             else:
                 messagebox.showerror("Erro", "USUÁRIO ou SENHA não encontrado ou incorretos!")
-        finally:
-            if 'cursor' in locals():
-                cursor.close()
 
     #   Janela 02 - Criar Conta 
     def CriarConta_Janela():
